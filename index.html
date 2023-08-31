@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0ceeca1f1f.js" crossorigin="anonymous"></script>
+    <title>HidePassword</title>
+</head>
+<body>
+    <div class="container">
+        <div class="div">
+            <input type="password" placeholder="Password" id="password">
+            <span onclick="toggleShow();"><i class="fa-solid fa-eye-slash"></i></span>
+        </div>
+    </div>
+
+    <script>
+        var password = document.getElementById("password");
+        var span = document.querySelector("span");
+        function toggleShow() {
+            if (password.type === "password") {
+                password.setAttribute('type', 'text');
+                span.innerHTML = "<i class='fa-solid fa-eye'></i>";
+                span.style.color = "orange";
+            }
+            else{
+                password.setAttribute('type','password') ;
+                span.innerHTML = "<i class='fa-solid fa-eye-slash'></i>";
+                span.style.color = "grey";
+            }
+        }
+    </script>
+</body>
+</html>
